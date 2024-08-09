@@ -6,10 +6,12 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "library_name",
   "column_break_2kxd",
   "library_code",
-  "status"
+  "status",
+  "column_break_yqdy",
+  "library_name",
+  "attachment"
  ],
  "fields": [
   {
@@ -40,11 +42,20 @@
   {
    "fieldname": "column_break_2kxd",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_yqdy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Attach",
+   "label": "Attachment"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-09 21:22:42.518689",
+ "modified": "2024-08-09 22:50:56.721652",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library",

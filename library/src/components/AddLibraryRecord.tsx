@@ -8,11 +8,11 @@ type Props = {
     onClose: () => void
 }
 interface FormFields {
-    description: string
-    amount: number
-    type: string
-    remarks: string
+    library_name: string
+    library_code: number
+    status: string
 }
+
 export const AddLibraryRecord = ({ isOpen, onClose }: Props) => {
 
     const [file, setFile] = useState<File | null>(null)
@@ -27,25 +27,23 @@ export const AddLibraryRecord = ({ isOpen, onClose }: Props) => {
 
         if (file) {
             upload(file, {
-                is_private: 1,
+                is_private: 1
             }).then((res) => {
                 createDocument(data, res.file_url)
             })
         } else {
             createDocument(data)
         }
-
     }
 
     const createDocument = (data: FormFields, fileUrl?: string) => {
-        createDoc('Library Record', {
+        createDoc('Library', {
             ...data,
-            file: fileUrl
+            attachment: fileUrl
         })
             .then(() => {
                 onClose()
             })
-
     }
 
     return (
@@ -57,43 +55,38 @@ export const AddLibraryRecord = ({ isOpen, onClose }: Props) => {
                     <ModalCloseButton />
                     <ModalBody>
                         <Stack>
-                            <FormControl isRequired isInvalid={!!errors.description}>
-                                <FormLabel>Description</FormLabel>
-                                <Input type='text' {...register('description', {
-                                    required: "Description is required",
+                            <FormControl isRequired isInvalid={!!errors.library_name}>
+                                <FormLabel>Library Name</FormLabel>
+                                <Input type='text' {...register('library_name', {
+                                    required: "Library Name is required",
                                     minLength: {
                                         value: 3,
-                                        message: "Description should be at least 3 characters"
+                                        message: "Library Name should be at least 3 characters"
                                     }
                                 })} />
-                                <FormErrorMessage>{errors.description?.message}</FormErrorMessage>
+                                <FormErrorMessage>{errors.library_name?.message}</FormErrorMessage>
                             </FormControl>
-                            <FormControl isRequired isInvalid={!!errors.amount}>
-                                <FormLabel>Amount</FormLabel>
-                                <Input type='number' {...register('amount', {
-                                    required: "Amount is required",
+                            <FormControl isRequired isInvalid={!!errors.library_code}>
+                                <FormLabel>Library Code</FormLabel>
+                                <Input type='text' {...register('library_code', {
+                                    required: "Library Code is required",
                                     min: {
                                         value: 1,
-                                        message: "Amount should be at least 1"
+                                        message: "Library Code should be at least 1"
                                     }
                                 })} />
-                                <FormErrorMessage>{errors.amount?.message}</FormErrorMessage>
+                                <FormErrorMessage>{errors.library_code?.message}</FormErrorMessage>
                             </FormControl>
-                            <FormControl isRequired isInvalid={!!errors.type}>
-                                <FormLabel>Type</FormLabel>
-                                <Select {...register('type', {
+                            <FormControl isRequired isInvalid={!!errors.status}>
+                                <FormLabel>Status</FormLabel>
+                                <Select {...register('status', {
                                     required: "Type is required"
                                 })}>
-                                    <option value=''>Select Type</option>
-                                    <option value='Credit'>Credit</option>
-                                    <option value='Debit'>Debit</option>
+                                    <option value=''>Select Status</option>
+                                    <option value='Active'>Active</option>
+                                    <option value='Inactive'>Inactive</option>
                                 </Select>
-                                <FormErrorMessage>{errors.type?.message}</FormErrorMessage>
-                            </FormControl>
-                            <FormControl isInvalid={!!errors.remarks}>
-                                <FormLabel>Remarks</FormLabel>
-                                <Textarea {...register('remarks')} />
-                                <FormErrorMessage>{errors.remarks?.message}</FormErrorMessage>
+                                <FormErrorMessage>{errors.status?.message}</FormErrorMessage>
                             </FormControl>
                             <FormControl>
                                 <FormLabel>Attachment</FormLabel>

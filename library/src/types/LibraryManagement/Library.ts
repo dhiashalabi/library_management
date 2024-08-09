@@ -10,10 +10,12 @@ export interface Library{
 	parentfield?: string
 	parenttype?: string
 	idx?: number
-	/**	Library Name : Data	*/
-	library_name: string
 	/**	Library Code : Data	*/
 	library_code: string
 	/**	Status : Select	*/
 	status: "Active" | "Inactive"
+	/**	Library Name : Data	*/
+	library_name: string
+	/**	Attachment : Attach	*/
+	attachment?: string
 }

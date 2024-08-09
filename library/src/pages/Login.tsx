@@ -24,11 +24,11 @@ const Login = () => {
 
     useEffect(() => {
         if (currentUser) {
-            navigate('/projects', {
+            navigate('/', {
                 replace: true
             })
         }
-    }, [currentUser])
+    }, [currentUser, navigate])
 
     const handleSubmit = () => {
         login({
