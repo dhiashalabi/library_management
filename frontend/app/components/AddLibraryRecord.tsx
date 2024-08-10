@@ -143,14 +143,11 @@ export const AddLibraryRecord = ({ isOpen, onClose }: Props) => {
               </FormControl>
               <FormControl>
                 <FormLabel>Attachment</FormLabel>
-                <Input
-                  type="file"
-                  onChange={(e) => {
+                <input type="file" onChange={(e) => {
                     if (e.target.files) {
                       setFile(e.target.files[0])
                     }
-                  }}
-                />
+                  }} className="file-input w-full max-w-xs" />
               </FormControl>
               {fileUploading && <Progress value={progress} />}
             </Stack>
