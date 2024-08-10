@@ -3,18 +3,17 @@ import { LibraryListTab } from './components/LibraryListTab'
 
 export default function Home() {
   return (
-      <Tabs>
-        <TabList>
-          <Tab>Library List</Tab>
-          <Tab>Dashboard</Tab>
-        </TabList>
-
-        <TabPanels>
-          <TabPanel>
-            <LibraryListTab />
-          </TabPanel>
-          <TabPanel></TabPanel>
-        </TabPanels>
-      </Tabs>
+    <Tabs>
+      <TabList>
+        <Tab>Library List</Tab>
+        <Tab>Dashboard</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <LibraryListTab />
+        </TabPanel>
+        <TabPanel></TabPanel>
+      </TabPanels>
+    </Tabs>
   )
 }

@@ -44,6 +44,24 @@ export const LibraryListTab = () => {
     }
   })
 
+  const getMessage = () => {
+    if (error?._server_messages && typeof error._server_messages === 'string') {
+      try {
+        // Parse the JSON string
+        const messagesArray = JSON.parse(error._server_messages)
+        if (Array.isArray(messagesArray) && messagesArray.length > 0) {
+          // Extract the message from the first item in the array
+          const messageObject = JSON.parse(messagesArray[0])
+          return messageObject.message || 'An unknown error occurred'
+        }
+      } catch (e) {
+        console.error('Error parsing _server_messages:', e)
+        return 'An error occurred while processing the error message'
+      }
+    }
+    return 'An error occurred'
+  }
+
   return (
     <Stack>
       <HStack justify={'space-between'}>
@@ -65,7 +83,9 @@ export const LibraryListTab = () => {
       {error && (
         <Alert status="error">
           <AlertIcon />
-          <AlertTitle>{error.exception}</AlertTitle>
+          <AlertTitle
+            dangerouslySetInnerHTML={{ __html: getMessage() }}
+          ></AlertTitle>
           <AlertDescription>
             {error.httpStatusText} {error.httpStatus}
           </AlertDescription>

@@ -34,7 +34,7 @@ const nextConfig = {
         ];
     },
     webpack(config) {
-        config.resolve.alias['@'] = path.resolve(__dirname, 'src');
+        config.resolve.alias['@'] = path.resolve(__dirname, 'app');
         return config;
     },
     reactStrictMode: true,

@@ -16,8 +16,6 @@ export interface Library{
 	status: "Active" | "Inactive"
 	/**	Library Name : Data	*/
 	library_name: string
-	/**	Address : Data	*/
-	address: string
 	/**	Attachment : Attach	*/
 	attachment?: string
 }

@@ -20,7 +20,7 @@
       ],
       "extends": [
         "plugin:tailwindcss/recommended",
-        "next/core-web-vitals",
+        "plugin:@typescript-eslint/recommended",
         "plugin:prettier/recommended"
       ],
       "parserOptions": {
