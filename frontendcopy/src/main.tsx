@@ -1,12 +1,12 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { ChakraProvider } from '@chakra-ui/react'
-import App from "./App.tsx";
+import App from "./App.jsx";
 import './index.css';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "@/pages/Login.tsx";
-import ProtectedRoute from './ProtectedRoute.tsx';
-import { Library } from "./pages/Library.tsx";
+import ProtectedRoute from './ProtectedRoute.jsx';
+import { Library } from "./pages/Library.jsx";
 
 const router = createBrowserRouter([
   {
