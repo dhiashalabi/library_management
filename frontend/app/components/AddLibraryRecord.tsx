@@ -27,7 +27,7 @@ export const AddLibraryRecord = ({ isOpen, onClose }: Props) => {
 
         if (file) {
             upload(file, {
-                is_private: 1
+                isPrivate: true,
             }).then((res) => {
                 createDocument(data, res.file_url)
             })

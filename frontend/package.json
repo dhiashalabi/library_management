@@ -2,12 +2,12 @@
   "name": "library",
   "private": true,
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
@@ -25,6 +25,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.24",
     "frappe-react-sdk": "^1.7.1",
+    "http-proxy-middleware": "^3.0.0",
     "next": "^14.2.5",
     "next-themes": "^0.3.0",
     "react": "^18.3.1",
