@@ -11,7 +11,8 @@
   "location",
   "column_break_yqdy",
   "library_name",
-  "attachment"
+  "attachment",
+  "university"
  ],
  "fields": [
   {
@@ -52,11 +53,16 @@
    "fieldname": "location",
    "fieldtype": "Data",
    "label": "Location"
+  },
+  {
+   "fieldname": "university",
+   "fieldtype": "Data",
+   "label": "University"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-15 18:32:11.919877",
+ "modified": "2024-08-15 19:03:02.241457",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library",
