@@ -9,10 +9,12 @@
   "library_code",
   "status",
   "location",
+  "room_number",
   "column_break_yqdy",
   "library_name",
   "attachment",
-  "university"
+  "university",
+  "college"
  ],
  "fields": [
   {
@@ -57,12 +59,23 @@
   {
    "fieldname": "university",
    "fieldtype": "Data",
-   "label": "University"
+   "label": "University",
+   "reqd": 1
+  },
+  {
+   "fieldname": "room_number",
+   "fieldtype": "Data",
+   "label": "Room Number"
+  },
+  {
+   "fieldname": "college",
+   "fieldtype": "Data",
+   "label": "College"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-15 19:03:02.241457",
+ "modified": "2024-08-15 21:38:48.895208",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library",
